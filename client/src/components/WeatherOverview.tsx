@@ -55,7 +55,7 @@ export default function WeatherOverview({ data, onDismissAlert }: WeatherOvervie
                 onClick={onDismissAlert}
                 data-testid="button-dismiss-alert"
               >
-                Dismiss
+                Закрыть
               </Button>
             )}
           </div>
@@ -65,7 +65,7 @@ export default function WeatherOverview({ data, onDismissAlert }: WeatherOvervie
       <Card className="p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-semibold">Weather Overview</h2>
+            <h2 className="text-2xl font-semibold">Обзор погоды</h2>
             <p className="text-sm text-muted-foreground mt-1">{data.condition}</p>
           </div>
           <div className="text-right">
@@ -79,7 +79,7 @@ export default function WeatherOverview({ data, onDismissAlert }: WeatherOvervie
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Droplets className="w-4 h-4" />
-              <span className="text-sm">Humidity</span>
+              <span className="text-sm">Влажность</span>
             </div>
             <p className="text-xl font-mono font-semibold" data-testid="text-humidity">
               {data.humidity}%
@@ -89,27 +89,27 @@ export default function WeatherOverview({ data, onDismissAlert }: WeatherOvervie
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Wind className="w-4 h-4" />
-              <span className="text-sm">Wind Speed</span>
+              <span className="text-sm">Ветер</span>
             </div>
             <p className="text-xl font-mono font-semibold" data-testid="text-wind-speed">
-              {data.windSpeed} m/s
+              {data.windSpeed} м/с
             </p>
           </div>
 
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Cloud className="w-4 h-4" />
-              <span className="text-sm">Precipitation</span>
+              <span className="text-sm">Осадки</span>
             </div>
             <p className="text-xl font-mono font-semibold" data-testid="text-precipitation">
-              {data.precipitation} mm
+              {data.precipitation} мм
             </p>
           </div>
 
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-muted-foreground">
               <Sun className="w-4 h-4" />
-              <span className="text-sm">UV Index</span>
+              <span className="text-sm">УФ индекс</span>
             </div>
             <p className="text-xl font-mono font-semibold" data-testid="text-uv-index">
               {data.uvIndex}

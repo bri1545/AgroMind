@@ -196,7 +196,7 @@ export default function Dashboard() {
 
   const centerPoint = fieldLocations[0] ? 
     { lat: fieldLocations[0].latitude, lng: fieldLocations[0].longitude } :
-    { lat: 40.7128, lng: -74.0060 };
+    { lat: 48.0196, lng: 66.9237 }; // Казахстан (центр)
 
   return (
     <div className="min-h-screen bg-background">
@@ -218,7 +218,7 @@ export default function Dashboard() {
               <FieldMap
                 fields={fieldLocations}
                 center={centerPoint}
-                zoom={12}
+                zoom={fieldLocations[0] ? 12 : 5}
                 onFieldClick={(fieldId) => console.log("Field clicked:", fieldId)}
               />
             </div>
