@@ -160,6 +160,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.post("/api/ai/analyze-area", isAuthenticated, async (req: any, res) => {
+    try {
+      const { coordinates, area, weatherData } = req.body;
+      const analysis = await geminiService.analyzeAreaDetailed(coordinates, area, weatherData);
+      res.json(analysis);
+    } catch (error) {
+      console.error("Error analyzing area:", error);
+      res.status(500).json({ message: "Failed to analyze area" });
+    }
+  });
+
   app.get("/api/alerts/field/:fieldId", isAuthenticated, async (req: any, res) => {
     try {
       const userId = req.user.claims.sub;
